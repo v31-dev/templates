@@ -75,8 +75,8 @@ echo "[5/7] Creating Virtual Machine..."
 # Core architecture and console
 qm create $VM_ID --name $VM_NAME --machine q35 --agent 1 --scsihw virtio-scsi-single --serial0 socket --vga serial0
 
-# Resources (2 Cores, 4GB RAM, no ballooning)
-qm set $VM_ID --memory 4096 --balloon 0 --cores 2 --cpu host
+# Resources (2 Cores, 4GB RAM)
+qm set $VM_ID --memory 4096 --balloon 1 --cores 2 --cpu host
 
 # Network
 qm set $VM_ID --net0 virtio,bridge=vmbr0
